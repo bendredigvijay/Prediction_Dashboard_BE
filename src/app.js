@@ -3,17 +3,16 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const app = express();
 
-// Use the built-in express.json() middleware instead of body-parser
 app.use(express.json());
 
 app.use(cors());
 
-// Example route
+// route
 app.get('/', (req, res) => {
   res.send('Hello, this is your Express server!');
 });
 
-// Include your auth routes
+//  auth routes
 app.use('/api/auth', authRoutes);
 
 app.listen(4000, () => {
